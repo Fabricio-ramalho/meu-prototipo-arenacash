@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArenaCash | Indique um amigo e ganhe R$ 50</title>
+<style>
+  :root {
+    --azul-arena: #1747f5;
+    --azul-noite: #0b1f5c;
+    --azul-ceu: #8fb0ff;
+    --azul-gelo: #eef3ff;
+    --branco: #ffffff;
+  }
 
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { height: 100%; }
+
+  body {
+    font-family: "Avenir Next", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    background: var(--azul-gelo);
+    color: var(--azul-noite);
+  }
+
+  /* Slide 16:9 centralizado na tela */
+  .slide {
+    width: min(100vw, 177.78vh);
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    background: var(--branco);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 4%;
+    padding: 5% 6%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .marca {
+    position: absolute;
+    top: 5%;
+    left: 6%;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: 700;
+    font-size: clamp(14px, 1.6vw, 24px);
+    color: var(--azul-arena);
+    letter-spacing: -0.01em;
+  }
+  .marca::before {
+    content: "";
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 50%;
+    background: var(--azul-arena);
+    box-shadow: 0.6em 0 0 -0.1em var(--azul-ceu);
+    margin-right: 0.5em;
+  }
+
+  .texto { display: flex; flex-direction: column; align-items: flex-start; }
+
+  h1 {
+    font-size: clamp(32px, 5.6vw, 92px);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    color: var(--azul-noite);
+    max-width: 11ch;
+  }
+
+  .subtitulo {
+    margin-top: 0.9em;
+    font-size: clamp(14px, 1.55vw, 26px);
+    line-height: 1.5;
+    color: #3b4a7a;
+    max-width: 34ch;
+  }
+
+  .botao {
+    margin-top: 1.8em;
+    display: inline-block;
+    padding: 0.9em 2em;
+    border-radius: 999px;
+    background: var(--azul-arena);
+    color: var(--branco);
+    font: inherit;
+    font-size: clamp(14px, 1.4vw, 22px);
+    font-weight: 700;
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .botao:hover { background: var(--azul-noite); transform: translateY(-2px); }
+  .botao:focus-visible { outline: 3px solid var(--azul-ceu); outline-offset: 3px; }
+
+  /* Dois círculos (você + seu amigo) com o bônus na interseção */
+  .visual {
+    container-type: inline-size;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 10 / 7;
+  }
+  .circulo {
+    position: absolute;
+    top: 0;
+    width: 70%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 3.6cqw;
+  }
+  .voce {
+    left: 0;
+    background: var(--azul-arena);
+    color: var(--branco);
+    padding-left: 9%;
+  }
+  .amigo {
+    right: 0;
+    background: var(--azul-ceu);
+    color: var(--azul-noite);
+    mix-blend-mode: multiply;
+    justify-content: flex-end;
+    padding-right: 7%;
+  }
+  .bonus {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: 10cqw;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--branco);
+    pointer-events: none;
+  }
+
+  /* Celular: empilha texto e visual */
+  @media (max-width: 720px) {
+    .slide {
+      grid-template-columns: 1fr;
+      aspect-ratio: auto;
+      min-height: 100vh;
+      width: 100%;
+      padding: 22% 8% 10%;
+      gap: 2.5rem;
+    }
+    h1 { font-size: 2.6rem; }
+    .subtitulo { font-size: 1.05rem; }
+    .botao { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+  <section class="slide" aria-label="Capa da campanha">
+    <div class="marca">ArenaCash</div>
+
+    <div class="texto">
+      <h1>Indique um amigo e ganhe R$ 50</h1>
+      <p class="subtitulo">Convide quem você gosta para abrir a conta na ArenaCash e receba R$ 50 quando ele começar a usar.</p>
+      <a class="botao" href="#">Saiba mais</a>
+    </div>
+
+    <div class="visual" aria-hidden="true">
+      <div class="circulo voce">Você</div>
+      <div class="circulo amigo">Seu amigo</div>
+      <div class="bonus">R$ 50</div>
+    </div>
+  </section>
+
+</body>
+</html>
