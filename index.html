@@ -6,10 +6,11 @@
 <title>ArenaCash | Não Indique seu parceiro e ganhe R$ 99</title>
 <style>
   :root {
-    --azul-arena: #1747f5;
-    --azul-noite: #0b1f5c;
-    --azul-ceu: #8fb0ff;
-    --azul-gelo: #eef3ff;
+    --roxo-arena: #6d28d9;
+    --roxo-noite: #2a0f5c;
+    --verde-claro: #6ee7a8;
+    --lilas-gelo: #f3effd;
+    --texto-suave: #5b4a85;
     --branco: #ffffff;
   }
 
@@ -19,8 +20,8 @@
 
   body {
     font-family: "Avenir Next", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
-    background: var(--azul-gelo);
-    color: var(--azul-noite);
+    background: var(--lilas-gelo);
+    color: var(--roxo-noite);
   }
 
   /* Slide 16:9 centralizado na tela */
@@ -47,7 +48,7 @@
     gap: 0.6em;
     font-weight: 700;
     font-size: clamp(14px, 1.6vw, 24px);
-    color: var(--azul-arena);
+    color: var(--roxo-arena);
     letter-spacing: -0.01em;
   }
   .marca::before {
@@ -55,8 +56,8 @@
     width: 1.4em;
     height: 1.4em;
     border-radius: 50%;
-    background: var(--azul-arena);
-    box-shadow: 0.6em 0 0 -0.1em var(--azul-ceu);
+    background: var(--roxo-arena);
+    box-shadow: 0.6em 0 0 -0.1em var(--verde-claro);
     margin-right: 0.5em;
   }
 
@@ -67,7 +68,7 @@
     line-height: 1.02;
     letter-spacing: -0.035em;
     font-weight: 800;
-    color: var(--azul-noite);
+    color: var(--roxo-noite);
     max-width: 11ch;
   }
 
@@ -75,7 +76,7 @@
     margin-top: 0.9em;
     font-size: clamp(14px, 1.55vw, 26px);
     line-height: 1.5;
-    color: #3b4a7a;
+    color: var(--texto-suave);
     max-width: 34ch;
   }
 
@@ -84,7 +85,7 @@
     display: inline-block;
     padding: 0.9em 2em;
     border-radius: 999px;
-    background: var(--azul-arena);
+    background: var(--roxo-arena);
     color: var(--branco);
     font: inherit;
     font-size: clamp(14px, 1.4vw, 22px);
@@ -94,8 +95,8 @@
     cursor: pointer;
     transition: background 0.2s ease, transform 0.2s ease;
   }
-  .botao:hover { background: var(--azul-noite); transform: translateY(-2px); }
-  .botao:focus-visible { outline: 3px solid var(--azul-ceu); outline-offset: 3px; }
+  .botao:hover { background: var(--roxo-noite); transform: translateY(-2px); }
+  .botao:focus-visible { outline: 3px solid var(--verde-claro); outline-offset: 3px; }
 
   /* Dois círculos (você + seu amigo) com o bônus na interseção */
   .visual {
@@ -117,14 +118,14 @@
   }
   .voce {
     left: 0;
-    background: var(--azul-arena);
+    background: var(--roxo-arena);
     color: var(--branco);
     padding-left: 9%;
   }
   .amigo {
     right: 0;
-    background: var(--azul-ceu);
-    color: var(--azul-noite);
+    background: var(--verde-claro);
+    color: var(--roxo-noite);
     mix-blend-mode: multiply;
     justify-content: flex-end;
     padding-right: 7%;
