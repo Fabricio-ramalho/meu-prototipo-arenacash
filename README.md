@@ -1,2 +1,2 @@
 # meu-prototipo-arenacash
-Treinamento
+Repositorio do curso de GutHub
